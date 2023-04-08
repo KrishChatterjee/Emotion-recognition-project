@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+<section class="upload">
+    <div class="upload-btn-wrapper">
+        <input type="button" class="btn  modal-open" value="Select a folder">
+        <div class="modal">
+            <div class="modal-content">
+                <span class="close modal-close">&times;</span>
+
+                <form action="/train/{{no}}" method="post" id="form-wav" enctype="multipart/form-data">
+                    <label for="uname">Enter model name: </label>
+                    <input type="text" id="fname"  name="name">
+                    <input type="file" id="myFile" class="btn btn-modal" name="model" webkitdirectory multiple accept="audio/*">
+                    <!-- <input type="file" id="myFile" class="btn btn-modal" name="model" multiple accept="audio/wav"> -->
+                    <input type="submit" class="btn btn-modal" value="upload">
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock body %}

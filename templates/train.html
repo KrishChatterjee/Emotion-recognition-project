@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+ {% block body %}
+ <section class="upload">
+    <div class="upload-btn-wrapper">
+        <a href="train/{{1}}"><input type="button" class="btn " value="MFCC Model"></a>
+        <a href="train/{{2}}"><input type="button" class="btn " value="GMM Model"></a>
+    </div>
+</section>
+    
+ {% endblock body %}
+
+
+ {% block script %}
+ <script src="../static/script_train.js"></script>
+
+ {% endblock script %}
