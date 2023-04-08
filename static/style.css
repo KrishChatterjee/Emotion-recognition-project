@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 *{
     margin: 0px;
     padding: 0px;
@@ -14,18 +15,21 @@ header{
 header h1{
     margin: auto;
     padding: 20px;
-    font-size: 65px;
+    font-size: 60px;
     font-family: 'Tilt Warp', cursive;
     color: white;
 
 }
 
-.logo {
-    width: 118px;
-    height: 121px;
+
+
+.logo{
+    width: auto;
+    height: 150px;
     margin: auto;
     padding: 11px 0px 11px 0px;
 }
+
 #nav{
     display: flex;
     flex-wrap: wrap;
@@ -40,7 +44,9 @@ header h1{
     position: absolute;
     top: 0px;
     left: 0px;
-    background:url('../static/img/background.jpg') no-repeat center center/cover;
+    background-color: #4158D0;
+    background-image: linear-gradient(180deg, #4158D0 0%, #C850C0 22%, #FFCC70 49%, #ffffff 75%, #ffffff 100%);
+    /* background:url('../static/img/background.jpg') no-repeat center center/cover; */
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -72,7 +78,7 @@ header h1{
 }
 .btn{
     padding: 20px;
-    font-family: cursive;
+    font-family: Poppins;
     background: rgb(243, 111, 216);
     border: 1px solid rgb(181, 19, 105);
     border-radius: 9px;
@@ -126,6 +132,7 @@ header h1{
     border: 1px solid #888;
     width: 80%;
     flex-direction: row-reverse;
+    background: rgba(255, 255, 255, 0.15);
 
 }
 
