@@ -1,27 +1,21 @@
-import librosa # for audio file analysis
-import librosa.display #to explicitly set the location of each object
-from glob import glob # to list out all files in directory
-import matplotlib.pyplot as plt #for plotting
-import numpy as np  # to work with vector arrays
-import speaker_verification_toolkit.tools as svt
-from sklearn.mixture import GaussianMixture as GMM
-import pickle as cPickle 
+
 
 
 
 import model
 import likelihood
 import os
-from flask import Flask, render_template,request, url_for,redirect,flash
+from flask import Flask, render_template,request, url_for,redirect,flash,send_from_directory
 from werkzeug.utils import secure_filename
-from pathlib import Path
-from flask import send_from_directory
 import re
+from pathlib import Path
+from multiprocessing import Process
+from threading import Thread
 
-
+#Initialize the flask App and sets up configurations for file uploads and secret key.
+app = Flask(__name__)            
 UPLOAD_FOLDER = './upload'
 ALLOWED_EXTENSIONS = {'wav'}
-app = Flask(__name__)            #Initialize the flask App
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = "abc"
 
@@ -75,9 +69,11 @@ def train_upload(no):
 @app.route('/download/<name>',methods=['GET', 'POST'])
 def download(name):
     uploads = os.path.join(app.root_path)
-    return send_from_directory(directory=uploads,path=name,as_attachment=True)
+    return send_from_directory(directory=uploads,path=name,as_attachment=True ,environ=request.environ)
 
 
+
+    
 
 
 
